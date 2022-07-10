@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TokenResponse {
+  token: String!
+}
+
+type RegisteredUser {
+  firstName: String
+  lastName: String
+  id: ID!
+  email: String!
+}
+
+type Query {
+  user(id: ID!): RegisteredUser!
+  jwt(loginUserData: LoginUserInput!): TokenResponse!
+}
+
+input LoginUserInput {
+  password: String!
+  email: String!
+}
+
+type Mutation {
+  register(registerUserData: RegisterUserInput!): RegisteredUser!
+}
+
+input RegisterUserInput {
+  firstName: String!
+  lastName: String!
+  password: String!
+  email: String!
+}
